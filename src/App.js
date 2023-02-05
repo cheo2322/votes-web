@@ -7,8 +7,10 @@ import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+
 import { Votes } from './Votes';
 import SigninScreen from './screens/SigninScreen';
+import HomeScreen from './screens/HomeScreen.js';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Votes);
@@ -49,14 +51,6 @@ function App() {
                       }
                       id="basic-nav-dropdown"
                     >
-                      <LinkContainer to="/profile">
-                        <NavDropdown.Item>Perfil</NavDropdown.Item>
-                      </LinkContainer>
-                      <LinkContainer to="/orderhistory">
-                        <NavDropdown.Item>
-                          Historial de compras
-                        </NavDropdown.Item>
-                      </LinkContainer>
                       <NavDropdown.Divider />
                       <Link
                         className="dropdown-item"
@@ -98,6 +92,7 @@ function App() {
           <div className="mt-3">
             <Routes>
               <Route path="/signin" element={<SigninScreen />} />
+              <Route path="/" element={<HomeScreen />} />
             </Routes>
           </div>
         </main>

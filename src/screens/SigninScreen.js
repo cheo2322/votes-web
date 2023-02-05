@@ -18,7 +18,7 @@ export default function SigninScreen() {
   const redirectInUrl = new URLSearchParams(search).get('redirect');
   const redirect = redirectInUrl ? redirectInUrl : '/';
 
-  const [user, setUser] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const [loading, setLoading] = useState(false);
@@ -34,7 +34,7 @@ export default function SigninScreen() {
       const { data } = await axios.post(
         `${baseUrl}/counter_api/v1/auth/signIn`,
         {
-          user: user,
+          username: username,
           password,
         }
       );
@@ -66,7 +66,10 @@ export default function SigninScreen() {
       <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="email">
           <Form.Label>Usuario</Form.Label>
-          <Form.Control required onChange={(e) => setUser(e.target.value)} />
+          <Form.Control
+            required
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="password">
           <Form.Label>Contrase&ntilde;a</Form.Label>
