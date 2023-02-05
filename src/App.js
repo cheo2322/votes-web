@@ -13,6 +13,7 @@ import SigninScreen from './screens/SigninScreen';
 import HomeScreen from './screens/HomeScreen.js';
 import VotesScreen from './screens/VotesScreen';
 import ProtectedRoute from './components/ProtectedRoute';
+import AddVotes from './screens/AddVotes';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Votes);
@@ -103,6 +104,7 @@ function App() {
               />
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/votes/:id" element={<VotesScreen />} />
+              <Route path="/addVotes/:id" element={<AddVotes />} />
             </Routes>
           </div>
         </main>

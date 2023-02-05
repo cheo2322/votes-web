@@ -91,7 +91,11 @@ function HomeScreen() {
                     type="button"
                     variant="light"
                     onClick={() => {
-                      navigate(`/order/${candidate.id}`);
+                      navigate(`/addVotes/${candidate.id}`);
+                      localStorage.setItem(
+                        'candidate',
+                        JSON.stringify(candidate)
+                      );
                     }}
                   >
                     Sumar votos
