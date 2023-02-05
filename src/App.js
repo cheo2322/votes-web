@@ -11,6 +11,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Votes } from './Votes';
 import SigninScreen from './screens/SigninScreen';
 import HomeScreen from './screens/HomeScreen.js';
+import VotesScreen from './screens/VotesScreen';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Votes);
@@ -93,6 +94,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomeScreen />} />
               <Route path="/signin" element={<SigninScreen />} />
+              <Route path="/votes/:id" element={<VotesScreen />} />
             </Routes>
           </div>
         </main>
