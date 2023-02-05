@@ -1,6 +1,6 @@
 import './App.css';
 
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
@@ -91,8 +91,8 @@ function App() {
         <main>
           <div className="mt-3">
             <Routes>
-              <Route path="/signin" element={<SigninScreen />} />
               <Route path="/" element={<HomeScreen />} />
+              <Route path="/signin" element={<SigninScreen />} />
             </Routes>
           </div>
         </main>
