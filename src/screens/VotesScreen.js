@@ -113,7 +113,7 @@ function VotesScreen() {
 
       <br></br>
 
-      <h3>Votos por recinto electoral</h3>
+      <h3>Votos detallados</h3>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (

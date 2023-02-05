@@ -12,6 +12,7 @@ import { Votes } from './Votes';
 import SigninScreen from './screens/SigninScreen';
 import HomeScreen from './screens/HomeScreen.js';
 import VotesScreen from './screens/VotesScreen';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Votes);
@@ -92,7 +93,14 @@ function App() {
         <main>
           <div className="mt-3">
             <Routes>
-              <Route path="/" element={<HomeScreen />} />
+              <Route
+                path="/"
+                element={
+                  <ProtectedRoute>
+                    <HomeScreen />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="/signin" element={<SigninScreen />} />
               <Route path="/votes/:id" element={<VotesScreen />} />
             </Routes>
